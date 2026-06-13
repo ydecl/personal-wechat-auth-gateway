@@ -1,0 +1,12 @@
+<view class="container">
+  <view class="input-group">
+    <text class="label">会话ID</text>
+    <input class="input" placeholder="请输入会话ID" bindinput="onSessionIdInput" value="{{sessionId}}" />
+  </view>
+  <button class="login-btn" type="primary" bindtap="onLogin">登录</button>
+  <button class="api-btn" type="default" bindtap="callBusinessApi" disabled="{{!hasToken}}">调用业务接口（需登录）</button>
+  <view class="status" wx:if="{{loginStatus}}">
+    <text class="status-text">{{loginStatus}}</text>
+  </view>
+  <view class="result" wx:if="{{result}}">{{result}}</view>
+</view>
