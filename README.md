@@ -1,18 +1,13 @@
----
-title: 微信小程序对接单点系统
-categories:
-- python
-- 微信开发者工具
-- Casdoor
----
 
 ## 个人也能拥有“微信扫码登录”——基于 Casdoor 的轻量级 OAuth 方案
 
 通过这套方案，即使使用的是普通账户（非企业认证）的小程序，也能实现和主流网站一样的“扫一扫，自动登录”体验。（注：微信官方扫码登录能力本身要求企业认证，本方案是一种轻量化的替代实现。）
 
-github:https://github.com/ydecl/personal-wechat-auth-gateway
+github: https://github.com/ydecl/personal-wechat-auth-gateway
 
 简单的视频演示：https://www.bilibili.com/video/BV1mjJV6qEU5/
+
+博客: https://blog.yc2019.cn/posts/weixinxcxpy.html
 
 ```mermaid
 sequenceDiagram
@@ -26,7 +21,7 @@ sequenceDiagram
     Casdoor->>AuthSvr: 302重定向到 /oauth/authorize?client_id=...
     AuthSvr->>AuthSvr: 生成 session_id (pending)
     AuthSvr-->>Browser: 返回HTML页面，包含：<br/>1. 展示小程序码（自动请求 /oauth/qrcode_img/{session_id}）<br/>2. 前端轮询脚本（每2秒请求 /oauth/session_status/{session_id}）
-    
+ 
     Browser->>AuthSvr: GET /oauth/qrcode_img/{session_id}
     AuthSvr->>AuthSvr: 检查缓存，若无则调用微信接口生成
     AuthSvr-->>Browser: 返回小程序码图片（PNG）
@@ -72,7 +67,7 @@ sequenceDiagram
 >实例代码位于github仓库/微信美化实例/index.wxml
 
 <div style="text-align: left;">
-  <img src="/access/weixin/2026-06-15_172750.png" width="100" />
+ <img src="/access/weixin/2026-06-15_172750.png" width="100" />
 </div>
 
 在 index.js 中，**务必修改代码中两处域名，确保与你在微信官方后台配置的服务器域名一致**：
