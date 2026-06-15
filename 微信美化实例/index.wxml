@@ -1,0 +1,46 @@
+<view class="container">
+  <!-- 头部简介 -->
+  <view class="header">
+    <text class="name">yc2019</text>
+    <text class="slogan">ydecl的小程序</text>
+  </view>
+
+  <!-- 导航卡片列表 -->
+  <view class="nav-list">
+    <!-- 主站 -->
+    <view class="nav-card" bindtap="copyLink" data-url="https://www.yc2019.cn">
+      <view class="card-icon">🌐</view>
+      <view class="card-info">
+        <text class="card-title">主站 yc2019.cn</text>
+        <text class="card-desc">www.yc2019.cn</text>
+      </view>
+      <view class="card-arrow">→</view>
+    </view>
+
+    <!-- 博客 -->
+    <view class="nav-card" bindtap="copyLink" data-url="https://blog.yc2019.cn">
+      <view class="card-icon">📝</view>
+      <view class="card-info">
+        <text class="card-title">博客</text>
+        <text class="card-desc">blog.yc2019.cn</text>
+      </view>
+      <view class="card-arrow">→</view>
+    </view>
+
+    <!-- MC 服务器 -->
+    <view class="nav-card" bindtap="copyLink" data-url="https://mc.yc2019.cn">
+      <view class="card-icon">⛏️</view>
+      <view class="card-info">
+        <text class="card-title">MC公益</text>
+        <text class="card-desc">mc.yc2019.cn</text>
+      </view>
+      <view class="card-arrow">→</view>
+    </view>
+  </view>
+
+  <!-- 底部提示 -->
+  <view class="footer">
+    <text class="tip">点击卡片复制链接，在浏览器中打开</text>
+    <text class="copyright">© 2026 yc2019.cn</text>
+  </view>
+</view>
